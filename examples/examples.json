@@ -1,0 +1,14 @@
+{
+  "rtl": {
+    "task": "Create a synthesizable 4-bit counter with clk, reset and enable.",
+    "notes": "A clean spec for GPT/Gemini to get right in 1-2 attempts. Verilator lints first; Yosys synthesizes only if lint passes."
+  },
+  "ode": {
+    "task": "Solve y'(x) + y(x) = 0 with y(0) = 2.",
+    "notes": "First-order linear ODE. Models sometimes return exp(-x) with the wrong constant on the first try, which is a good demonstration of the repair loop (initial_condition_mismatch)."
+  },
+  "logic": {
+    "task": "Determine whether x >= 0, y >= 0, x + y <= 10 and x = 6, y = 5 are simultaneously satisfiable.",
+    "notes": "Straightforward satisfiability check. A harder variant: 'x >= 5 and x <= 2 - are these constraints consistent?' reliably produces a contradiction failure class."
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering AI Verification</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Engineering AI Verification</span>
+    </div>
+    <div class="tagline">Bring your model. Bring your verifier. We run the engineering loop.</div>
+  </div>
+</header>
+
+<main class="canvas">
+
+  <section class="workspace" id="setup-view">
+
+    <div class="field-group">
+      <div class="field-label">Model</div>
+      <div class="chip-row" id="model-chips"></div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-label">Engineering domain</div>
+      <div class="chip-row" id="domain-chips"></div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-label">Verification environment</div>
+      <div class="verifier-readout" id="verifier-readout">Select a domain to resolve the verifier.</div>
+    </div>
+
+    <div class="field-group">
+      <div class="field-label-row">
+        <div class="field-label">Task / specification</div>
+        <button class="link-btn" id="load-example-btn">Load example</button>
+      </div>
+      <textarea id="task-input" placeholder="Describe the engineering task…" rows="4"></textarea>
+    </div>
+
+    <div class="run-row">
+      <label class="attempts-control">
+        Max attempts
+        <select id="max-attempts">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3" selected>3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </label>
+      <button class="run-btn" id="run-btn">Run engineering loop</button>
+    </div>
+    <div class="setup-error" id="setup-error" hidden></div>
+  </section>
+
+  <section class="workspace" id="pipeline-view" hidden>
+    <div class="pipeline-header">
+      <div class="pipeline-title" id="pipeline-title">Running…</div>
+      <button class="link-btn" id="new-run-btn">New run</button>
+    </div>
+    <div class="pipeline-columns" id="pipeline-columns"></div>
+  </section>
+
+  <section class="workspace" id="result-view" hidden>
+    <div class="result-header">
+      <div class="status-badge" id="status-badge">—</div>
+      <button class="link-btn" id="new-run-btn-2">New run</button>
+    </div>
+
+    <div id="comparison-block" hidden>
+      <div class="section-title">Model comparison</div>
+      <table class="compare-table" id="compare-table"></table>
+    </div>
+
+    <div class="result-columns" id="result-columns"></div>
+
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
